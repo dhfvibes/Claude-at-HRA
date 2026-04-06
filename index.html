@@ -334,6 +334,7 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
     <a href="#build-the-habit">Learn</a>
     <a href="#sharper-results">Quality</a>
     <a href="#reading">Reading</a>
+    <a href="#whats-next">Feedback</a>
   </div>
 </nav>
 
@@ -367,7 +368,7 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
       <div class="tip-card">
         <div class="tip-num">1</div>
         <div class="tip-title">Command the Agent</div>
-        <div class="tip-text">Claude isn't a search bar. It's an <span class="term">agent<span class="tt">An AI Agent is Claude working autonomously on your behalf — reading files, browsing the web, executing multi-step tasks, and using tools (Skills) you give it access to. Think of it as a capable team member you can delegate to.</span></span> you direct. Give it a role, a goal, and constraints — the way you'd brief a smart new team member on their first assignment. The more clearly you set the stage, the sharper the output. Tell it what to do, how to do it, and what "good" looks like. Also experiment with commanding it to do things you don't know how to do, then have it teach you about those skills.</div>
+        <div class="tip-text">Claude isn't a search bar. It's an <span class="term">agent<span class="tt">An AI Agent is Claude working autonomously on your behalf — reading files, browsing the web, executing multi-step tasks, and using tools (Skills) you give it access to. Think of it as a capable team member you can delegate to.</span></span> you direct. Give it a role, a goal, context, and constraints — the way you'd brief a smart new team member on their first assignment. The more clearly you set the stage, the sharper the output. Tell it what to do, how to do it, and what "good" looks like. Also experiment with commanding it to do things you don't know how to do, then have it teach you about those skills.</div>
       </div>
       <div class="tip-card">
         <div class="tip-num">2</div>
@@ -997,6 +998,78 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
       </div>
     </div>
   </div>
+</section>
+
+<!-- WHERE SHOULD WE GO FROM HERE -->
+<section class="content-section bg-white" id="whats-next">
+  <div class="section-inner fade-up">
+    <div class="section-label">Help Improve This Guide</div>
+    <h2 class="section-title" style="color:var(--navy)">Where Should We Go From Here?</h2>
+    <p style="font-size:17px;color:var(--ink2);max-width:640px;line-height:1.7;margin-bottom:56px">Help us improve this resource for the firm. What would you find most helpful? How do you think we should prioritize improvements?</p>
+
+    <!-- The Prompt -->
+    <div style="background:var(--navy);border-radius:14px;padding:32px 40px;margin-bottom:56px;max-width:760px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:16px">The Prompt We Used to Evaluate This Guide</div>
+      <p style="font-family:var(--mono,monospace);font-size:14px;color:rgba(255,255,255,.85);line-height:1.75;margin:0">You are an expert in the adoption of new software and AI in professional services firms. Critique this guide that will be paired with firmwide rollout of Claude for a 175-person consulting firm. Offer strengths, weaknesses, and specific recommendations for improvement. Keep it to concise bullets.</p>
+      <p style="font-family:var(--mono,monospace);font-size:13px;color:var(--lime);margin:16px 0 0;opacity:.8">https://claude-at-hra.vercel.app</p>
+    </div>
+
+    <!-- Claude's Response label -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:32px">Claude's Response</div>
+
+    <!-- Strengths + Weaknesses side by side -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+
+      <!-- Strengths -->
+      <div style="background:var(--offwhite);border-radius:14px;padding:32px 36px;border-top:3px solid var(--lime)">
+        <h3 style="font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy);margin-bottom:22px;letter-spacing:-.01em">Strengths</h3>
+        <ol style="padding:0 0 0 18px;margin:0;display:flex;flex-direction:column;gap:13px;color:var(--ink2);font-size:14px;line-height:1.65">
+          <li><strong>Tone is exactly right.</strong> Conversational, non-condescending, and credible — written by someone who actually uses the tool, not a vendor or IT department.</li>
+          <li><strong>"Try It First" section is strong.</strong> Leading with a concrete, immediately applicable task is the right activation strategy for a professional audience.</li>
+          <li><strong>Equity and bias section is exceptional.</strong> Rare in rollout guides. The specificity to HR&A's practice areas shows real institutional self-awareness and will build trust with skeptical staff.</li>
+          <li><strong>Governance is clear and non-negotiable without being punitive.</strong> The three requirements are memorable and appropriately firm.</li>
+          <li><strong>Learning path stages are realistic.</strong> Acknowledging that some people take months is honest and reduces early drop-off.</li>
+          <li><strong>Glossary tooltips are smart UX.</strong> Defining jargon inline without interrupting flow is well-executed.</li>
+          <li><strong>Named champions with roles is excellent.</strong> Putting faces and specific domains on the support team dramatically lowers the barrier to asking for help.</li>
+        </ol>
+      </div>
+
+      <!-- Weaknesses -->
+      <div style="background:var(--offwhite);border-radius:14px;padding:32px 36px;border-top:3px solid #E8C547">
+        <h3 style="font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy);margin-bottom:22px;letter-spacing:-.01em">Weaknesses</h3>
+        <ol style="padding:0 0 0 18px;margin:0;display:flex;flex-direction:column;gap:13px;color:var(--ink2);font-size:14px;line-height:1.65">
+          <li><strong>No "what's in it for me" upfront.</strong> The guide jumps to mechanics before making a compelling case for why staff should invest time. Skeptics — especially senior consultants — need that hook.</li>
+          <li><strong>Model picker section is already partially outdated.</strong> The Opus/Sonnet/Haiku framing doesn't reflect the current Claude 4 family. A living guide should flag this or abstract away model names entirely.</li>
+          <li><strong>"Cowork" is introduced without enough orientation.</strong> It's referenced repeatedly before being explained. Users who haven't downloaded it yet will be confused early.</li>
+          <li><strong>No explicit data confidentiality rules at the top.</strong> The Responsible Use Policy is mentioned but not linked or summarized. Many staff will begin using Claude before reading it — the highest-stakes risk for the firm.</li>
+          <li><strong>The "Jagged Frontier" section is underutilized.</strong> It lists capability tiers but doesn't translate them into HR&A-specific task guidance.</li>
+          <li><strong>No failure examples.</strong> Concrete failure stories — a hallucinated statistic that reached a client, an equity-blind framing — build appropriate skepticism faster than abstract warnings.</li>
+          <li><strong>Learning path has no time anchors.</strong> The stages have no suggested pacing, making it hard to self-assess progress.</li>
+          <li><strong>Resources section is a dump, not a path.</strong> Twelve resources with no prioritization. A "read this one first" recommendation would do more.</li>
+        </ol>
+      </div>
+
+    </div><!-- /two-col -->
+
+    <!-- Specific Recommendations full-width -->
+    <div style="background:var(--navy);border-radius:14px;padding:40px 48px;margin-bottom:48px">
+      <h3 style="font-family:var(--serif);font-size:17px;font-weight:700;color:var(--white);margin-bottom:28px;letter-spacing:-.01em">Specific Recommendations</h3>
+      <ol style="padding:0 0 0 18px;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 48px;color:rgba(255,255,255,.82);font-size:14px;line-height:1.65">
+        <li><strong>Add a 2-sentence value proposition at the top:</strong> "Firms that adopt AI well get more done with the same team. This guide exists so HR&A gets there faster than most."</li>
+        <li><strong>Surface a data handling TL;DR before any tool instructions.</strong> Even one box: "Never enter identified client data. When in doubt, anonymize or ask."</li>
+        <li><strong>Add a "What Bad Looks Like" sidebar</strong> — a fabricated citation, a misread scope, an equity-blind framing. It would sharpen judgment faster than any principle.</li>
+        <li><strong>Create a one-page PDF version.</strong> A printable quick-reference for staff who won't scroll a web guide but will pin something to their monitor.</li>
+        <li><strong>Replace the model picker with task-based guidance.</strong> Practitioners think in tasks, not model specs — say "use Sonnet for email drafts and meeting prep."</li>
+        <li><strong>Add a "first week" checklist — five specific actions</strong> — at the top or bottom. The learning path stages are good but too abstract for the first 48 hours.</li>
+        <li><strong>Link the Responsible Use Policy prominently in two places</strong> — at the top and in the governance section — not just at the bottom under resources.</li>
+        <li><strong>Consider a brief FAQ.</strong> "Can I use Claude for client deliverables?" "What if a client asks if AI was used?" These are the actual questions staff are nervous about.</li>
+      </ol>
+    </div>
+
+    <!-- Coming soon note -->
+    <p style="font-size:14px;color:var(--ink3);font-style:italic;border-left:3px solid var(--border);padding-left:16px;max-width:580px;line-height:1.65">A future version of this guide will let you upvote the items you'd most like us to prioritize and submit your own recommendations directly.</p>
+
+  </div><!-- /section-inner -->
 </section>
 
 <!-- FOOTER -->
