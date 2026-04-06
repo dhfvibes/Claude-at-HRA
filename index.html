@@ -262,17 +262,17 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
 .reading-filter{font-size:12px;font-weight:600;color:var(--ink3);background:var(--white);border:1px solid var(--border);border-radius:100px;padding:5px 14px;cursor:pointer;transition:.15s;border:none;font-family:var(--sans)}
 .reading-filter:hover,.reading-filter.active{color:var(--blue);background:var(--blue-faint)}
 .reading-list{display:flex;flex-direction:column;gap:0}
-.reading-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
+.reading-item{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);flex-wrap:wrap;justify-content:space-between}
 .reading-item:last-child{border-bottom:none}
-.reading-item .r-tag{flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);background:var(--gray);border-radius:100px;padding:3px 10px;min-width:80px;text-align:center}
+.reading-item .r-tag{flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);background:var(--gray);border-radius:100px;padding:3px 10px;min-width:80px;text-align:center;order:3}
 .reading-item .r-tag.podcast{color:var(--coral);background:var(--coral-faint)}
 .reading-item .r-tag.newsletter{color:var(--green);background:var(--green-faint)}
 .reading-item .r-tag.article{color:var(--blue);background:var(--blue-faint)}
 .reading-item .r-tag.research{color:var(--amber);background:var(--amber-faint)}
 .reading-item .r-tag.person{color:var(--ink3);background:var(--gray)}
-.reading-item a{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;transition:color .15s}
+.reading-item a{font-size:14px;font-weight:700;color:var(--ink);text-decoration:none;transition:color .15s;order:1;flex:0 1 auto}
 .reading-item a:hover{color:var(--blue)}
-.reading-item .r-desc{font-size:13px;color:var(--ink3);flex:1}
+.reading-item .r-desc{font-size:13px;color:var(--ink3);flex:1;order:2;width:100%}
 
 /* ── CONTACTS ── */
 .contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -343,7 +343,7 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <h1 class="hero-title">HR<span class="comma">&</span>A x Claude</h1>
+    <h1 class="hero-title">HR<span class="comma" style="color:var(--white)">&</span>A <span style="color:var(--lime)">x</span> Claude</h1>
     <p class="hero-subtitle">Demystifying Generative AI and Making it Useful</p>
     <p class="hero-desc">A practical guide for working with Claude at HR&A &mdash; from your first conversation to building it into how your teams operate.</p>
     <a href="#feedback" class="hero-feedback">Living Document &mdash; Submit Feedback Below &darr;</a>
@@ -367,12 +367,12 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
       <div class="tip-card">
         <div class="tip-num">1</div>
         <div class="tip-title">Command the Agent</div>
-        <div class="tip-text">Claude isn't a search bar. It's an <span class="term">agent<span class="tt">An AI Agent is Claude working autonomously on your behalf — reading files, browsing the web, executing multi-step tasks, and using tools (Skills) you give it access to. Think of it as a capable team member you can delegate to.</span></span> you direct. Give it a role, a goal, and constraints — the way you'd brief a smart new team member on their first assignment. The more clearly you set the stage, the sharper the output. Tell it what to do, how to do it, and what "good" looks like.</div>
+        <div class="tip-text">Claude isn't a search bar. It's an <span class="term">agent<span class="tt">An AI Agent is Claude working autonomously on your behalf — reading files, browsing the web, executing multi-step tasks, and using tools (Skills) you give it access to. Think of it as a capable team member you can delegate to.</span></span> you direct. Give it a role, a goal, and constraints — the way you'd brief a smart new team member on their first assignment. The more clearly you set the stage, the sharper the output. Tell it what to do, how to do it, and what "good" looks like. Also experiment with commanding it to do things you don't know how to do, then have it teach you about those skills.</div>
       </div>
       <div class="tip-card">
         <div class="tip-num">2</div>
         <div class="tip-title">Ask Great Questions</div>
-        <div class="tip-text">The quality Claude produces is almost entirely a function of how specifically you prompt it. Include context, constraints, audience, and format. Explicitly mitigate Claude's systemic bias and add an equity lens. Prompting is a skill that compounds fast — and it's the closest thing to a cheat code.</div>
+        <div class="tip-text">The quality Claude produces is almost entirely a function of how specifically you prompt it. Include context, constraints, audience, and format. Explicitly mitigate <a href="#sharper-results" style="color:var(--blue);text-decoration:underline">Claude's systemic bias</a> and add an equity lens — it's both important for advancing justice and is a meaningful differentiator for HR&A. Prompting is a skill that compounds fast — and it's the closest thing to a cheat code.</div>
       </div>
       <div class="tip-card">
         <div class="tip-num">3</div>
@@ -946,31 +946,55 @@ body{font-family:var(--sans);background:var(--offwhite);color:var(--ink2);line-h
   <div class="section-inner fade-up">
     <p class="section-label">Your Team</p>
     <h2 class="section-title" style="color:var(--white)">Firm Resources &amp; Champions</h2>
+    <p style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:24px">Put yourself on the leaderboard. Share what you're learning, document your best prompts, and help others level up.</p>
 
-    <div class="contacts-grid" style="margin-bottom:28px">
-      <div class="contact-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
-        <div class="contact-icon" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">&#127775;</div>
-        <div class="contact-info"><h4 style="color:var(--white)">Danny Fuchs</h4><p style="color:rgba(255,255,255,.5)">Firm-level AI strategy, cross-functional questions, escalations.</p><span class="contact-name" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">Partner</span></div>
+    <div class="reading-list" style="border:none">
+      <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+        <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Danny Fuchs</a>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Firm-level AI strategy, cross-functional questions, escalations.</span>
+        <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);background:rgba(238,252,121,.15);border-radius:100px;padding:3px 10px;order:3">Partner</span>
       </div>
-      <div class="contact-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
-        <div class="contact-icon" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">&#128188;</div>
-        <div class="contact-info"><h4 style="color:var(--white)">Preston Rhea</h4><p style="color:rgba(255,255,255,.5)">Use case guidance, playbooks, advanced workflows.</p><span class="contact-name" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">Principal</span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+        <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Preston Rhea</a>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Use case guidance, playbooks, advanced workflows.</span>
+        <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lavender);background:rgba(224,229,255,.15);border-radius:100px;padding:3px 10px;order:3">Principal</span>
       </div>
-      <div class="contact-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
-        <div class="contact-icon" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">&#9881;</div>
-        <div class="contact-info"><h4 style="color:var(--white)">Zack Russell</h4><p style="color:rgba(255,255,255,.5)">Technical questions, integrations, tool troubleshooting.</p><span class="contact-name" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">Technology Resource Manager</span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+        <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Zack Russell</a>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Technical questions, integrations, tool troubleshooting.</span>
+        <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);border-radius:100px;padding:3px 10px;order:3">Tech Resource Manager</span>
       </div>
-      <div class="contact-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
-        <div class="contact-icon" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">&#127970;</div>
-        <div class="contact-info"><h4 style="color:var(--white)">Melanie Downing</h4><p style="color:rgba(255,255,255,.5)">Account access, Cowork setup, operational.</p><span class="contact-name" style="background:rgba(60,78,214,.3);border-color:rgba(60,78,214,.5)">Director of Strategy &amp; Ops</span></div>
+      <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:none;flex-wrap:wrap;justify-content:space-between">
+        <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Melanie Downing</a>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Account access, Cowork setup, operational.</span>
+        <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);border-radius:100px;padding:3px 10px;order:3">Dir. of Strategy &amp; Ops</span>
       </div>
     </div>
 
-    <div class="cards-2" style="gap:14px">
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)"><div class="card-body"><div class="card-icon">&#128218;</div><div class="card-title" style="color:var(--white)">Shared Prompt Library</div><div class="card-text" style="color:rgba(255,255,255,.5)">Firmwide Project with curated templates. Claude Cowork &rarr; Projects &rarr; HR&A Shared Library.</div></div></div>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)"><div class="card-body"><div class="card-icon">&#128203;</div><div class="card-title" style="color:var(--white)">Responsible Use Policy</div><div class="card-text" style="color:rgba(255,255,255,.5)">Required reading before client work. Data handling, confidentiality, authorized uses.</div></div></div>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)"><div class="card-body"><div class="card-icon">&#128197;</div><div class="card-title" style="color:var(--white)">Monthly Champions Sync</div><div class="card-text" style="color:rgba(255,255,255,.5)">Open to all. Use cases, questions, updates. Check internal calendar.</div></div></div>
-      <div class="card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)"><div class="card-body"><div class="card-icon">&#128172;</div><div class="card-title" style="color:var(--white)">Slack: #artificialintelligence</div><div class="card-text" style="color:rgba(255,255,255,.5)">Tips, questions, prompt sharing, wins.</div></div></div>
+    <div style="margin-top:40px">
+      <h3 style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--white);margin-bottom:16px">Resources</h3>
+      <div class="reading-list" style="border:none">
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+          <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Shared Prompt Library</a>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Firmwide Project with curated templates. Claude Cowork → Projects → HR&A Shared Library.</span>
+          <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);background:rgba(238,252,121,.15);border-radius:100px;padding:3px 10px;order:3">Library</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+          <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Responsible Use Policy</a>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Required reading before client work. Data handling, confidentiality, authorized uses.</span>
+          <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);border-radius:100px;padding:3px 10px;order:3">Policy</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap;justify-content:space-between">
+          <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Monthly Champions Sync</a>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Open to all. Use cases, questions, updates. Check internal calendar.</span>
+          <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lavender);background:rgba(224,229,255,.15);border-radius:100px;padding:3px 10px;order:3">Meeting</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:none;flex-wrap:wrap;justify-content:space-between">
+          <a href="#" style="font-size:14px;font-weight:700;color:var(--white);text-decoration:none;order:1">Slack: #artificialintelligence</a>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);order:2;width:100%">Tips, questions, prompt sharing, wins.</span>
+          <span style="flex-shrink:0;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);border-radius:100px;padding:3px 10px;order:3">Channel</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
